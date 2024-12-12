@@ -49,8 +49,24 @@ If you find our project helpful, please give it a star :star: or [cite](#bibtex)
     <td colspan="2" style="width:350;" align="center">
       <strong><em>Action Description:</em></strong> Pour vinegar into bowl.
     </td>
-    <td colspan="2" style="width:550;" align="center">
+    <td colspan="2" style="width:350;" align="center">
       <strong><em>Action Description:</em></strong> Pick up and crack egg.
+    </td>
+  </tr>
+
+  <tr>
+    <td><img src="docs/13.png" alt="Input image" style="width:350px; height:120px;"></td>
+    <td><img src="docs/13.gif" alt="Result" style="width:350px; height:120px;"></td>
+    <td><img src="docs/87.png" alt="Input image" style="width:350px; height:120px;"></td>
+    <td><img src="docs/87.gif" alt="Result" style="width:350px; height:120px;"></td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="width:350;" align="center">
+      <strong><em>Action Description:</em></strong> Throw paper into bin.
+    </td>
+    <td colspan="2" style="width:350;" align="center">
+      <strong><em>Action Description:</em></strong> Shake soy milk.
     </td>
   </tr>
   

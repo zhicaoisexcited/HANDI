@@ -11,7 +11,7 @@
 </div>
 
 
-Our model is a diffusion-based instructional video generation method that achieves **precise hand motion controllability** and **enhanced visual-action alignment** by leveraging automatic region of motion generation and a novel hand structure loss.
+We aim to enhance instructional video generation with a diffusion-based framework, achieving state-of-the-art results in hand motion clarity and task-specific region localization.
 
 If you find our project helpful, please give it a star :star: or [cite](#bibtex) it, we would be very grateful :sparkling_heart: .
 

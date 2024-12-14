@@ -2,7 +2,7 @@
   
 # Instructional Video Generation
 
-[Yayuan Li](https://www.linkedin.com/in/yayuan-li-148659272/), [Zhi Cao](zhicao@umich.edu), [Jason J. Corso](https://web.eecs.umich.edu/~jjcorso/)
+[Yayuan Li](https://www.linkedin.com/in/yayuan-li-148659272/), [Zhi Cao](https://www.linkedin.com/in/zhi-cao-3147b1266/), [Jason J. Corso](https://web.eecs.umich.edu/~jjcorso/)
 
 [COG Research Group, University of Michigan](https://github.com/MichiganCOG)
 

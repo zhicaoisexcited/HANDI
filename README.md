@@ -65,7 +65,7 @@ If you find our project helpful, please give it a star :star: or [cite](#bibtex)
 
 ## Features Planned
 - 💥 Release training code
-- 💥 Video generatinon with camera movement.
+- 💥 Video generation with camera movement.
 - 💥 Support Huggingface Demo / Google Colab.
 - etc.
 

@@ -11,7 +11,7 @@
 </div>
 
 
-Our model is a diffusion-based instructional video generation method that achieves **precise hand motion controllability** and **enhanced visual-action alignment** by leveraging automatic region of motion generation and a novel hand structure loss.
+Our model is a diffusion-based instructional video generation method that achieves **precise hand motion controllability** and **enhanced visual-action alignment** by leveraging automatic region of motion generation and a novel hand structure loss. Visit [project page](https://excitedbutter.github.io/project_page/) for more video resutls. 
 
 If you find our project helpful, please give it a star :star: or [cite](#bibtex) it, we would be very grateful :sparkling_heart: .
 

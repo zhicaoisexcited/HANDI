@@ -90,9 +90,6 @@ pip install -r requirements.txt
 ```
 ## 💥 Training / Fine-tuning
 
-### Dataset
-Download our training dataset via this [link]. Our dataset is composed of video clips and action labels/descriptions (in *.json) from Ego4D and Epic-Kitchens.
-
 ### Fine-tuning on EPIC-KITCHENS/EGO4D dataset
 1. Download the EPIC-KITCHENS/EGO4D dataset.
 2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.

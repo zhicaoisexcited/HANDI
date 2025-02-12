@@ -67,8 +67,8 @@ If you find our project helpful, please give it a star :star: or [cite](#bibtex)
 
 ## Features Planned
 - 💥 updated model weights (coming soon)
-- 💥 Video generatinon with camera movement.
-- 💥 Support Huggingface Demo / Google Colab.
+- 💥 Solving camera movement issure: data preprocessing
+- 💥 Support Huggingface Demo / Google Colab
 - etc.
 
 ## Getting Started

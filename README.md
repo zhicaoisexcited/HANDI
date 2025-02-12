@@ -98,7 +98,7 @@ python train.py --config output/latent/{download_model}/config.yaml --eval valid
 
 To control the motion area, we use the provided script `mask_video.py`. Update the input and output video folder paths as needed, and run the following command:
 ```bash
-python mask_video.py
+python mask_video.py --video_dir /path/to/video_directory --save_dir /path/to/output_directory
 ```
 
 Below are examples of an input image and its corresponding RoM mask:
@@ -137,7 +137,7 @@ All configuration details are placed in `example/train_mask_motion.yaml`. Each p
       video_json: '/path/to/your/json_file.json'
 ```
 5. Run the following command to fine-tune. The following config requires around 30G GPU RAM. You can reduce the `train_batch_size`, `train_data.width`, `train_data.height`, and `n_sample_frames` in the config to reduce GPU RAM:
-```
+```bash
 python train.py --config example/train_mask_motion.yaml pretrained_model_path=<download_model>
 ```
 
@@ -152,7 +152,7 @@ python train.py --config example/train_mask_motion.yaml pretrained_model_path=<d
 ```
 2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
 3. Create region of motion masks for your own videos by running following command:
-```
+```bash
 python mask_video.py --video_dir /path/to/video_directory --save_dir /path/to/output_directory
 ```
 

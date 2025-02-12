@@ -90,6 +90,19 @@ pip install -r requirements.txt
 ```
 ## 💥 Training / Fine-tuning
 
+### Dataset
+Download our training dataset via this [link]. Our dataset is composed of video clips and action labels/descriptions (in *.json) from Ego4D and Epic-Kitchens.
+
+### Fine-tuning on EPIC-KITCHENS/EGO4D dataset
+1, Download the EPIC-KITCHENS/EGO4D dataset
+2, Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent
+3, Download the region of motion mask 
+4, Change <output_dir> path in `example/train_mask_motion.yaml`
+5,
+
+### Fine-tuning on your own dataset
+1, 
+
 ## 💫 Inference
 Please download the [pretrained model](https://drive.google.com/file/d/1sWlr5r54_XxqdgHoCacS7opoucABpEVx/view?usp=drive_link) to output/latent, then run the following command. Please replace the {download_model} to your download model name:
 ```bash

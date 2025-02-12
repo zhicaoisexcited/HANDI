@@ -63,9 +63,8 @@ If you find our project helpful, please give it a star :star: or [cite](#bibtex)
 ## News 🔥
 **2024.12.9**: Released inference code
 
-**2025.2.12**: Released training/finetuning code
-
 ## Features Planned
+- 💥 Released training/finetuning code (coming soon)
 - 💥 updated model weights (coming soon)
 - 💥 Solving camera movement issure: data preprocessing
 - 💥 Support Huggingface Demo / Google Colab

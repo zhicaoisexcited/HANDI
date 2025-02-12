@@ -125,9 +125,9 @@ All configuration details are placed in `example/train_mask_motion.yaml`. Each p
 ## 💥 Training / Fine-tuning
 
 ### Fine-tuning on EPIC-KITCHENS/EGO4D dataset
-1. Download the EPIC-KITCHENS/EGO4D dataset.
+1. Download our video datasets which are preprocessed subsets of the EPIC-KITCHENS/EGO4D.
 2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
-3. Download the [region of motion mask](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) and change `mask_path` under `VideoJsonDataset` class in `utils/dataset.py`.
+3. Download our [region of motion mask](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) of the video dataset and change `mask_path` under `VideoJsonDataset` class in `utils/dataset.py`.
 4. In your config in `example/train_mask_motion.yaml`, make sure to set `dataset_types` to `video_json` and set `output_dir`, `output_dir`, `train_data:video_dir`, and `train_data:video_json` like this:
 ```
   - dataset_types: 
@@ -152,9 +152,10 @@ python train.py --config example/train_mask_motion.yaml pretrained_model_path=<d
 ```
 2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
 3. Create region of motion masks for your own videos by running following command:
-```bash
-python mask_video.py
 ```
+python mask_video.py --video_dir /path/to/video_directory --save_dir /path/to/output_directory
+```
+
 Follow step 4 and step 5 in previous section.
 
 

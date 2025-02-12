@@ -96,7 +96,7 @@ Download our training dataset via this [link]. Our dataset is composed of video 
 ### Fine-tuning on EPIC-KITCHENS/EGO4D dataset
 1. Download the EPIC-KITCHENS/EGO4D dataset.
 2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
-3. Download the [region of motion mask](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar), change `mask_path` under `VideoJsonDataset` class in `utils/dataset.py`.
+3. Download the [region of motion mask](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) and change `mask_path` under `VideoJsonDataset` class in `utils/dataset.py`.
 4. In your config in `example/train_mask_motion.yaml`, make sure to set `dataset_types` to `video_json` and set `output_dir`, `output_dir`, `train_data:video_dir`, and `train_data:video_json` like this:
 ```
   - dataset_types: 
@@ -111,7 +111,14 @@ python train.py --config example/train_mask_motion.yaml pretrained_model_path=<d
 ```
 
 ### Fine-tuning on your own dataset
-1. Create your own dataset
+1. Create your own dataset. Simply place the videos into a folder and create a json with captions like this:
+```
+[
+      {"caption": "The person uses their left hand to pick up a plate with a piece of chicken on it.", "video": "1.mp4"}, 
+      {"caption": "The person holds a plate with the left hand and places it down on the cupboard, while the right hand holds a paper.", "video": "2.mp4"}
+]
+
+```
 2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
 3. Create your own region of motion mask by running following command:
 ```bash

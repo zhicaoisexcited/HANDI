@@ -88,8 +88,9 @@ conda activate IVG
 ```bash
 pip install -r requirements.txt
 ```
+## 💥 Training / Fine-tuning
 
-## Running inference
+## 💫 Inference
 Please download the [pretrained model](https://drive.google.com/file/d/1sWlr5r54_XxqdgHoCacS7opoucABpEVx/view?usp=drive_link) to output/latent, then run the following command. Please replace the {download_model} to your download model name:
 ```bash
 python train.py --config output/latent/{download_model}/config.yaml --eval validation_data.prompt_image=example/Julienne_carrot.png validation_data.prompt='The person holds a carrot on the chopping board with the left hand and uses a knife in the right hand to julienne the carrot.'

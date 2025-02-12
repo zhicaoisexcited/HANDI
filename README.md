@@ -89,40 +89,6 @@ conda activate IVG
 ```bash
 pip install -r requirements.txt
 ```
-## 💥 Training / Fine-tuning
-
-### Fine-tuning on EPIC-KITCHENS/EGO4D dataset
-1. Download the EPIC-KITCHENS/EGO4D dataset.
-2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
-3. Download the [region of motion mask](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) and change `mask_path` under `VideoJsonDataset` class in `utils/dataset.py`.
-4. In your config in `example/train_mask_motion.yaml`, make sure to set `dataset_types` to `video_json` and set `output_dir`, `output_dir`, `train_data:video_dir`, and `train_data:video_json` like this:
-```
-  - dataset_types: 
-      - video_json
-    train_data:
-      video_dir: '/path/to/your/video_directory'
-      video_json: '/path/to/your/json_file.json'
-```
-5. Run the following command to fine-tune. The following config requires around 30G GPU RAM. You can reduce the `train_batch_size`, `train_data.width`, `train_data.height`, and `n_sample_frames` in the config to reduce GPU RAM:
-```
-python train.py --config example/train_mask_motion.yaml pretrained_model_path=<download_model>
-```
-
-### Fine-tuning on your own dataset
-1. Create your own dataset. Simply place the videos into a folder and create a json with captions like this:
-```
-[
-      {"caption": "The person uses their left hand to pick up a plate with a piece of chicken on it.", "video": "1.mp4"}, 
-      {"caption": "The person holds a plate with the left hand and places it down on the cupboard, while the right hand holds a paper.", "video": "2.mp4"}
-]
-
-```
-2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
-3. Create your own region of motion mask by running following command:
-```bash
-python mask_video.py
-```
-4. Follow step 4 and step 5 in previous section.
 
 ## 💫 Inference
 Please download the [pretrained model](https://drive.google.com/file/d/1sWlr5r54_XxqdgHoCacS7opoucABpEVx/view?usp=drive_link) to output/latent, then run the following command. Please replace the {download_model} to your download model name:
@@ -154,6 +120,42 @@ python train.py --config output/latent/{download_model}/config.yaml --eval valid
 The configuration uses a YAML config borrowed from [Tune-A-Video](https://github.com/showlab/Tune-A-Video) repositories. 
 
 All configuration details are placed in `example/train_mask_motion.yaml`. Each parameter has a definition for what it does.
+
+
+## 💥 Training / Fine-tuning
+
+### Fine-tuning on EPIC-KITCHENS/EGO4D dataset
+1. Download the EPIC-KITCHENS/EGO4D dataset.
+2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
+3. Download the [region of motion mask](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) and change `mask_path` under `VideoJsonDataset` class in `utils/dataset.py`.
+4. In your config in `example/train_mask_motion.yaml`, make sure to set `dataset_types` to `video_json` and set `output_dir`, `output_dir`, `train_data:video_dir`, and `train_data:video_json` like this:
+```
+  - dataset_types: 
+      - video_json
+    train_data:
+      video_dir: '/path/to/your/video_directory'
+      video_json: '/path/to/your/json_file.json'
+```
+5. Run the following command to fine-tune. The following config requires around 30G GPU RAM. You can reduce the `train_batch_size`, `train_data.width`, `train_data.height`, and `n_sample_frames` in the config to reduce GPU RAM:
+```
+python train.py --config example/train_mask_motion.yaml pretrained_model_path=<download_model>
+```
+
+### Fine-tuning on your own dataset
+1. Create your own dataset. Simply place the videos into a folder and create a json with captions like this:
+```
+[
+      {"caption": "The person uses their left hand to pick up a plate with a piece of chicken on it.", "video": "1.mp4"}, 
+      {"caption": "The person holds a plate with the left hand and places it down on the cupboard, while the right hand holds a paper.", "video": "2.mp4"}
+]
+
+```
+2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
+3. Create region of motion masks for your own videos by running following command:
+```bash
+python mask_video.py
+```
+Follow step 4 and step 5 in previous section.
 
 
 ## Bibtex

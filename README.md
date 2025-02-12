@@ -61,10 +61,11 @@ If you find our project helpful, please give it a star :star: or [cite](#bibtex)
 ![framework](docs/framework.png)
 
 ## News 🔥
-**2024.12.9**: Released inference code and updated the model to instructional_video_v1.0
+**2024.12.9**: Released inference code
+**2025.2.12**: Released training/finetuning code
 
 ## Features Planned
-- 💥 Release training code
+- 💥 updated model weights (coming soon)
 - 💥 Video generatinon with camera movement.
 - 💥 Support Huggingface Demo / Google Colab.
 - etc.

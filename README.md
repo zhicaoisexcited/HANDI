@@ -115,13 +115,6 @@ python train.py --config output/latent/{download_model}/config.yaml --eval valid
 <p align="center"> <img src="docs/31.gif" alt="Inference Result" width="60%"> </p>
 
 
-### Configuration
-
-The configuration uses a YAML config borrowed from [Tune-A-Video](https://github.com/showlab/Tune-A-Video) repositories. 
-
-All configuration details are placed in `example/train_mask_motion.yaml`. Each parameter has a definition for what it does.
-
-
 ## 💥 Training / Fine-tuning
 
 ### Fine-tuning on EPIC-KITCHENS/EGO4D dataset
@@ -166,6 +159,12 @@ Next, replace the `'python train_xx.py ...'` commands mentioned earlier with `'a
 ```
 accelerate launch train.py --config_file example/deepspeed.yaml --config example/train_mask_motion.yaml
 ```
+
+### Configuration
+
+The configuration uses a YAML config borrowed from [Tune-A-Video](https://github.com/showlab/Tune-A-Video) repositories. 
+
+All configuration details are placed in `example/train_mask_motion.yaml`. Each parameter has a definition for what it does.
 
 
 ## Bibtex

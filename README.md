@@ -1,7 +1,7 @@
 
 <div align="center">
   
-# Instructional Video Generation
+# Instructional Video
 
 [Yayuan Li*](https://www.linkedin.com/in/yayuan-li-148659272/), [Zhi Cao*](zhicao@umich.edu), [Jason J. Corso](https://web.eecs.umich.edu/~jjcorso/)
 

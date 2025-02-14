@@ -127,7 +127,7 @@ All configuration details are placed in `example/train_mask_motion.yaml`. Each p
 ### Fine-tuning on EPIC-KITCHENS/EGO4D dataset
 1. Download our [video dataset](https://prism.eecs.umich.edu/zhicao/IVG/video_data/) which are preprocessed subsets of the EPIC-KITCHENS/EGO4D. Also, downlaod the corresponding [prompt file](https://prism.eecs.umich.edu/zhicao/IVG/promt_file/).
 2. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to output/latent.
-3. Download our [region of motion mask](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) of the video dataset and change `mask_path` under `VideoJsonDataset` class in `utils/dataset.py`.
+3. Download our [region of motion mask](https://prism.eecs.umich.edu/zhicao/IVG/mask/) of the video dataset and change `mask_path` under `VideoJsonDataset` class in `utils/dataset.py`.
 4. In your config in `example/train_mask_motion.yaml`, make sure to set `dataset_types` to `video_json` and set `output_dir`, `output_dir`, `train_data:video_dir`, and `train_data:video_json` like this:
 ```
   - dataset_types: 
@@ -164,7 +164,7 @@ I highly recommend utilizing multiple GPUs for training with Accelerator, as it 
 
 Next, replace the `'python train_xx.py ...'` commands mentioned earlier with `'accelerate launch train_xx.py ...'`. For instance:  
 ```
-accelerate launch train.py --config example/train_mask_motion.yaml
+accelerate launch train.py --config_file example/deepspeed.yaml --config example/train_mask_motion.yaml
 ```
 
 

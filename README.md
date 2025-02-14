@@ -91,30 +91,6 @@ conda activate IVG
 pip install -r requirements.txt
 ```
 
-## 💫 Inference
-Please download the [pretrained model](https://drive.google.com/file/d/1sWlr5r54_XxqdgHoCacS7opoucABpEVx/view?usp=drive_link) to output/latent, then run the following command. Please replace the {download_model} to your download model name:
-```bash
-python train.py --config output/latent/{download_model}/config.yaml --eval validation_data.prompt_image=example/Julienne_carrot.png validation_data.prompt='The person holds a carrot on the chopping board with the left hand and uses a knife in the right hand to julienne the carrot.'
-```
-
-To control the motion area, we use the provided script `mask_video.py`. Update the input and output video folder paths as needed, and run the following command:
-```bash
-python mask_video.py --video_dir /path/to/video_directory --save_dir /path/to/output_directory
-```
-
-Below are examples of an input image and its corresponding RoM mask:
-
-<p align="center">
-<img src="docs/31.png" alt="Original Video Frame" width="45%">
-<img src="docs/31_mask.png" alt="Generated RoM Mask" width="45%">
-</p>
-
-Then run the following command for inference:
-```bash
-python train.py --config output/latent/{download_model}/config.yaml --eval validation_data.prompt_image=example/Julienne_carrot.png validation_data.prompt='The person holds a carrot on the chopping board with the left hand and uses a knife in the right hand to julienne the carrot.' validation_data.mask=example/carrot_mask.jpg 
-```
-<p align="center"> <img src="docs/31.gif" alt="Inference Result" width="60%"> </p>
-
 
 ## 💥 Training / Fine-tuning
 
@@ -160,6 +136,31 @@ Next, replace the `'python train_xx.py ...'` commands mentioned earlier with `'a
 ```
 accelerate launch train.py --config_file example/deepspeed.yaml --config example/train_mask_motion.yaml
 ```
+
+## 💫 Inference
+Please download the [pretrained model](https://drive.google.com/file/d/1sWlr5r54_XxqdgHoCacS7opoucABpEVx/view?usp=drive_link) to output/latent, then run the following command. Please replace the {download_model} to your download model name:
+```bash
+python train.py --config output/latent/{download_model}/config.yaml --eval validation_data.prompt_image=example/Julienne_carrot.png validation_data.prompt='The person holds a carrot on the chopping board with the left hand and uses a knife in the right hand to julienne the carrot.'
+```
+
+To control the motion area, we use the provided script `mask_video.py`. Update the input and output video folder paths as needed, and run the following command:
+```bash
+python mask_video.py --video_dir /path/to/video_directory --save_dir /path/to/output_directory
+```
+
+Below are examples of an input image and its corresponding RoM mask:
+
+<p align="center">
+<img src="docs/31.png" alt="Original Video Frame" width="45%">
+<img src="docs/31_mask.png" alt="Generated RoM Mask" width="45%">
+</p>
+
+Then run the following command for inference:
+```bash
+python train.py --config output/latent/{download_model}/config.yaml --eval validation_data.prompt_image=example/Julienne_carrot.png validation_data.prompt='The person holds a carrot on the chopping board with the left hand and uses a knife in the right hand to julienne the carrot.' validation_data.mask=example/carrot_mask.jpg 
+```
+<p align="center"> <img src="docs/31.gif" alt="Inference Result" width="60%"> </p>
+
 
 ### Configuration
 

@@ -587,7 +587,6 @@ class VideoJsonDataset(Dataset):
             video_path = os.path.join(self.video_dir, item['video'])
             video_name = os.path.splitext(os.path.basename(video_path))[0]
             mask_path = os.path.join("/home/zhicao/kitchen/train1/mask_video", f"{video_name}.png")
-            # mask1_path = os.path.join("/home/zhicao/ego4d/train/mask_video", f"{video_name}.png")
             prompt = item['caption']
             if self.fallback_prompt == "<no_text>":
                 prompt = ""
@@ -602,13 +601,6 @@ class VideoJsonDataset(Dataset):
         mask = mask.resize((video.shape[3], video.shape[2]))
         mask = np.array(mask)
         mask = (mask > 0).astype(np.uint8) * 255
-        # output_mask_path = "/home/zhicao/kitchen/1/mask.png"
-        # Image.fromarray(mask).save(output_mask_path)
-        
-        # mask1 = Image.open(mask1_path).convert("L")
-        # mask1 = mask1.resize((video.shape[3], video.shape[2]))
-        # mask1 = np.array(mask1)
-        # mask1 = (mask1 > 0).astype(np.uint8) * 255
         
         prompt_ids = get_prompt_ids(prompt, self.tokenizer)
 

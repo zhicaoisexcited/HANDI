@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np
 import mediapipe as mp
+import argparse
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from multiprocessing import Pool, cpu_count
@@ -82,17 +83,25 @@ def process_video(filename, input_folder, output_folder_union, model_path):
         print(f"Failed to save union mask: {union_output_path}, Error: {e}")
 
 def main():
-    input_folder = '/home/zhicao/ego4d/train/target'
-    output_folder_union = '/scratch1/home/zhicao/ego4d/mask_video'
-    model_path = 'hand_landmarker.task'
+    parser = argparse.ArgumentParser(description='Process videos to create hand masks')
+    parser.add_argument('--video_dir', type=str, required=True,
+                      help='Directory containing input videos')
+    parser.add_argument('--save_dir', type=str, required=True,
+                      help='Directory to save output masks')
+    parser.add_argument('--model_path', type=str, default='hand_landmarker.task',
+                      help='Path to the hand landmarker model file')
     
-    os.makedirs(output_folder_union, exist_ok=True)
+    args = parser.parse_args()
+    
+    # Create output directory if it doesn't exist
+    os.makedirs(args.save_dir, exist_ok=True)
 
-    filenames = os.listdir(input_folder)
-    args = [(filename, input_folder, output_folder_union, model_path) for filename in filenames]
+    filenames = os.listdir(args.video_dir)
+    process_args = [(filename, args.video_dir, args.save_dir, args.model_path) 
+                   for filename in filenames]
 
     with Pool(processes=cpu_count()) as pool:
-        pool.starmap(process_video, args)
+        pool.starmap(process_video, process_args)
 
 if __name__ == "__main__":
     main()

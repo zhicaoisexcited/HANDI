@@ -1,6 +1,6 @@
 # Pretrained diffusers model path.
 #pretrained_model_path: "output/latent/train_mask_motion" #https://huggingface.co/damo-vilab/text-to-video-ms-1.7b/tree/main
-pretrained_model_path: "/scratch1/home/zhicao/result_5000/train_2024-11-12T09-39-32"
+pretrained_model_path: "./downloads/weights/animate_anything_512_v1.02"
 #pretrained_model_path: "output/latent/train_4fps"
 #pretrained_model_path: "/data/llm/zeroscope_v2_576w"
 motion_mask: True
@@ -24,16 +24,8 @@ output_dir: "/scratch1/home/zhicao/result_pretrain"
 dataset_types: 
   - video_json
 train_data:
-#   width: 512
-#   height: 512
-#   use_bucketing: False
-#   return_mask: True
-#   return_motion: True
-#   sample_start_idx: 1
-#   fps: 8
-#   n_sample_frames: 16
-  video_dir: '/home/zhicao/kitchen/train1/target'
-  video_json: '/home/zhicao/kitchen/train1/prompt1.json'
+  video_dir: './downloads/dataset/video_epickitchen'
+  video_json: './downloads/dataset/prompt_epickitchen.json'
 
 # Adds offset noise to training. See https://www.crosslabs.org/blog/diffusion-with-offset-noise
 # If this is enabled, rescale_schedule will be disabled.

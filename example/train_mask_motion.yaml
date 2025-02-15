@@ -7,7 +7,7 @@ motion_mask: True
 motion_strength: True
 
 # The folder where your training outputs will be placed.
-output_dir: "/scratch1/home/zhicao/result_pretrain"
+output_dir: "./result"
 
 # You can train multiple datasets at once. They will be joined together for training.
 # Simply remove the line you don't need, or keep them all for mixed training.

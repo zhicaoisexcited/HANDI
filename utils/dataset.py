@@ -586,7 +586,7 @@ class VideoJsonDataset(Dataset):
             item = self.video_files[index]
             video_path = os.path.join(self.video_dir, item['video'])
             video_name = os.path.splitext(os.path.basename(video_path))[0]
-            mask_path = os.path.join("/home/zhicao/kitchen/train1/mask_video", f"{video_name}.png")
+            mask_path = os.path.join("./downloads/masks/mask_epickitchen", f"{video_name}.png")
             prompt = item['caption']
             if self.fallback_prompt == "<no_text>":
                 prompt = ""

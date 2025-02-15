@@ -1,0 +1,78 @@
+pretrained_model_path: downloads/weights/animate_anything_512_v1.02
+output_dir: ./result
+train_data:
+  video_dir: ./downloads/dataset/video_epickitchen
+  video_json: ./downloads/dataset/prompt_epickitchen.json
+validation_data:
+  prompt: The person holds a pan on the hob with the left hand and stirs the pine
+    nuts in the pan using a wooden spoon in the right hand.
+  prompt_image: /home/zhicao/animate-anything/example/108.png
+  sample_preview: false
+  num_frames: 16
+  width: 512
+  height: 512
+  num_inference_steps: 25
+  guidance_scale: 9
+extra_train_data: []
+dataset_types:
+- video_json
+shuffle: true
+validation_steps: 1
+trainable_modules:
+- attn1
+- .attentions
+- attn2
+- conv_in
+- temp_conv
+- motion
+not_trainable_modules: []
+extra_unet_params: null
+extra_text_encoder_params: null
+train_batch_size: 12
+max_train_steps: 10
+learning_rate: 5.0e-05
+scale_lr: false
+lr_scheduler: constant_with_warmup
+lr_warmup_steps: 20
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_weight_decay: 0
+adam_epsilon: 1.0e-08
+max_grad_norm: 1.0
+gradient_accumulation_steps: 1
+gradient_checkpointing: true
+text_encoder_gradient_checkpointing: false
+checkpointing_steps: 1
+resume_from_checkpoint: null
+resume_step: null
+mixed_precision: bf16
+use_8bit_adam: false
+enable_xformers_memory_efficient_attention: false
+enable_torch_2_attn: true
+seed: null
+use_offset_noise: false
+rescale_schedule: true
+offset_noise_strength: 0.1
+extend_dataset: false
+cache_latents: false
+cached_latent_dir: null
+save_pretrained_model: true
+logger_type: tensorboard
+motion_mask: true
+motion_strength: true
+in_channels: 5
+kwargs:
+  train_text_encoder: false
+  lora_version: cloneofsimo
+  use_unet_lora: false
+  use_text_lora: false
+  lora_unet_dropout: 0.1
+  lora_text_dropout: 0.1
+  save_lora_for_webui: true
+  only_lora_for_webui: false
+  unet_lora_modules:
+  - UNet3DConditionModel
+  text_encoder_lora_modules:
+  - CLIPEncoderLayer
+  lora_rank: 16
+  trainable_text_modules: null

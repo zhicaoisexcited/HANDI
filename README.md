@@ -144,7 +144,7 @@ accelerate launch train.py --config_file example/deepspeed.yaml --config example
 ```
 
 ## 💫 Inference
-Please download the [pretrained model](https://drive.google.com/file/d/1sWlr5r54_XxqdgHoCacS7opoucABpEVx/view?usp=drive_link) to folder `downloads/weights/` (e.g., `downloads/weights/IVG.1.0`). Then run the following command:
+Please download the [pretrained model](https://prism.eecs.umich.edu/zhicao/IVG/IVG_1.0.tar.gz) to folder `downloads/weights/` (e.g., `downloads/weights/IVG.1.0`). Then run the following command:
 ```bash
 python train.py --config downloads/weights/IVG.1.0/config.yaml --eval validation_data.prompt_image=example/Julienne_carrot.png validation_data.prompt='The person holds a carrot on the chopping board with the left hand and uses a knife in the right hand to julienne the carrot.'
 ```

@@ -101,8 +101,8 @@ pip install -r requirements.txt
 ## 💥 Training / Fine-tuning
 
 ### Fine-tuning on EPIC-KITCHENS/EGO4D dataset
-1. Download our [video data](https://prism.eecs.umich.edu/zhicao/IVG/video_data/) which are preprocessed subsets of the EPIC-KITCHENS/EGO4D. Also, downlaod the corresponding [prompt files](https://prism.eecs.umich.edu/zhicao/IVG/prompt_file/). Put them under `downloads/dataset/` (e.g., `downloads/dataset/video_epickitchen`, `downloads/dataset/prompt_epickitchen`).
-3. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to folder `downloads/weights/` (e.g., `downloads/dataset/animate_anything_512_v1.02`).
+1. Download our [video data](https://prism.eecs.umich.edu/zhicao/IVG/video_data/) which are preprocessed subsets of the EPIC-KITCHENS/EGO4D. Also, downlaod the corresponding [prompt files](https://prism.eecs.umich.edu/zhicao/IVG/prompt_file/). Put them under `downloads/dataset/` (e.g., `downloads/dataset/video_epickitchen`, `downloads/dataset/prompt_epickitchen.json`).
+3. Download the [pretrained model](https://cloudbook-public-production.oss-cn-shanghai.aliyuncs.com/animation/animate_anything_512_v1.02.tar) to folder `downloads/weights/` (e.g., `downloads/weights/animate_anything_512_v1.02`).
 4. Download our [region of motion masks](https://prism.eecs.umich.edu/zhicao/IVG/mask/) of the video datasets and put it under `downloads/masks/` (e.g., `downloads/masks/mask_epickitchen`). Then change `mask_path` under `VideoJsonDataset` class in `utils/dataset.py`.
 5. In your config in `example/train_mask_motion.yaml`, make sure to set `dataset_types` to `video_json` and set `output_dir`, `output_dir`, `train_data:video_dir`, and `train_data:video_json` like this:
 ```
@@ -144,9 +144,9 @@ accelerate launch train.py --config_file example/deepspeed.yaml --config example
 ```
 
 ## 💫 Inference
-Please download the [pretrained model](https://drive.google.com/file/d/1sWlr5r54_XxqdgHoCacS7opoucABpEVx/view?usp=drive_link) to output/latent, then run the following command. Please replace the {download_model} to your download model name:
+Please download the [pretrained model](https://drive.google.com/file/d/1sWlr5r54_XxqdgHoCacS7opoucABpEVx/view?usp=drive_link) to folder `downloads/weights/` (e.g., `downloads/weights/IVG.1.0`). Then run the following command:
 ```bash
-python train.py --config output/latent/{download_model}/config.yaml --eval validation_data.prompt_image=example/Julienne_carrot.png validation_data.prompt='The person holds a carrot on the chopping board with the left hand and uses a knife in the right hand to julienne the carrot.'
+python train.py --config downloads/weights/IVG.1.0/config.yaml --eval validation_data.prompt_image=example/Julienne_carrot.png validation_data.prompt='The person holds a carrot on the chopping board with the left hand and uses a knife in the right hand to julienne the carrot.'
 ```
 
 To control the motion area, we use the provided script `mask_video.py`. Update the input and output video folder paths as needed, and run the following command:

@@ -88,10 +88,7 @@ conda activate IVG
 
 ### Python Requirements
 ```bash
-cd IVG
-```
-
-```bash
+cd Instructional-Video-Generation-IVG
 pip install -r requirements.txt
 ```
 

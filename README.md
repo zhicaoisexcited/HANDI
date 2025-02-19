@@ -162,6 +162,15 @@ python train.py --config output/latent/{download_model}/config.yaml --eval valid
 <p align="center"> <img src="docs/31.gif" alt="Inference Result" width="60%"> </p>
 
 
+### Multi-Sample Inference
+To evaluate the model on multiple examples, we provide a script for multi-sample inference along with a random small subset of the test dataset. We also provided a random small subsets of test dataset (`downloads/test/source`, `downloads/test/masks`, `downloads/test/prompt.json`). The results will be generated under `downloads/test/result`.
+
+Then run the following command for multi sample inference:
+```bash
+python evaluation.py --eval --config downloads/weights/IVG.1.0/config.yaml --image_folder downloads/test --prompt_file downloads/test/prompt.json --mask_folder downloads/test/masks --output_folder downloads/test/result
+```
+
+
 ### Configuration
 
 The configuration uses a YAML config borrowed from [Tune-A-Video](https://github.com/showlab/Tune-A-Video) repositories. 

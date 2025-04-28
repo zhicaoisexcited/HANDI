@@ -12,7 +12,7 @@
 </div>
 
 
-We aim to enhance instructional video generation with a diffusion-based framework, achieving state-of-the-art results in hand motion clarity and task-specific region localization. Visit [project page](https://excitedbutter.github.io/project_page/) for more video resutls. 
+We aim to enhance instructional video generation with a diffusion-based framework, achieving state-of-the-art results in hand motion clarity and task-specific region localization. Visit [project page](https://zhicaoisexcited.github.io/project_page/) for more video resutls. 
 
 If you find our project helpful, please give it a star :star: or [cite](#bibtex) it, we would be very grateful :sparkling_heart: .
 

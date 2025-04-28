@@ -8,7 +8,7 @@
 [COG Research Group, University of Michigan](https://github.com/MichiganCOG)
 
 <a href='https://arxiv.org/abs/2412.04189'><img src='https://img.shields.io/badge/ArXiv-2311.12886-red'></a> 
-<a href='https://excitedbutter.github.io/project_page/'><img src='https://img.shields.io/badge/Project-Page-Blue'></a>
+<a href='https://zhicaoisexcited.github.io/project_page/'><img src='https://img.shields.io/badge/Project-Page-Blue'></a>
 </div>
 
 
